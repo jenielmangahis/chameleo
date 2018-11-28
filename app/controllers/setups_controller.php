@@ -223,6 +223,43 @@
             $this->data = $this->HelpContent->read();
             $this->set("HelpContent", $recid);
         }//end edithelp controller function  
+
+        /**
+        * function    : addhelp
+        * Created On  : 28-11-2018
+        * Description : function show add of specific help     
+        **/
+        function addhelp(){
+            //$this->session_check_admin();
+            ##import project type model for processing
+            App::import("Model", "HelpContent");
+            $this->HelpContent =   & new HelpContent();
+            ##check empty data
+            if(!empty($this->data)) {
+                #set the posted data
+                $this->HelpContent->set($this->data);
+                #check server side validation
+                $this->HelpContent->invalidFields();
+                #save data in project type table
+                if($this->HelpContent->Save($this->data)){
+                    $this->Session->setFlash('Database updated successfully.','default',array('class' => 'successmsg'));
+                    if(isset($this->data['Action']['redirectpage'])){
+                        $sessdata=$this->Session->read('newsortingby');
+                        $this->redirect('/'.$sessdata);
+                    }else
+                    {
+                        $this->redirect("/admins/help_list");
+                    }        
+                }
+            }
+
+            $optionSection = array('admin' => 'admin', 'sponsor' => 'sponsor', 'both' => 'both');
+            $this->HelpContent->id = $recid;
+            $this->data = $this->HelpContent->read();
+            $this->set(array('optionSection' => $optionSection));
+            $this->set("HelpContent", $recid);
+        }//end addhelp controller function 
+
 		/**
 		* function    : mail_footer
 		*Links		  : SPAM Footer	

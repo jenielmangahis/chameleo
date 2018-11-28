@@ -1,15 +1,15 @@
 <!--container starts here-->
 <?php Configure::read('App.base_url');?>
 <?php $pagination->setPaging($paging); ?>
-<div class="titlCont"><div class="centerPage"> 
+<div class="titlCont"><div style="width:960px;margin:0 auto">
         <?php echo $form->create("Setups", array("action" => "help_list",'name' => 'help_list', 'id' => "help_list"))?>
                 <div align="center" id="toppanel" >
                  <?php  echo $this->renderElement('new_slider');  ?>
         </div><span class="titlTxt">Site Help List </span>
         <div class="topTabs">
                 <ul class="dropdown">
-        
-                        <li><a id="linkedit" onclick="editholderhelplist();" href="javascript:void(0)"><span>Edit</span></a></li>
+                    <li><a href="<?php echo Configure::read('App.base_url');?>/setups/addhelp"><span>Add</span></a></li>
+                    <li><a id="linkedit" onclick="editholderhelplist();" href="javascript:void(0)"><span>Edit</span></a></li>
                 </ul>
                 </div>
                 <div class="clear"></div>
@@ -24,10 +24,9 @@
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
 
-    <div><span class="topLft_curv"></span>  
-	<span class="topRht_curv"></span>              
+    <div><span class="topLft_curv"></span> 
+	<span class="topRht_curv"></span>               
         <div class="gryTop">
-		<div class="new_filter">
                 <?php echo $form->create("setups", array("action" => "help_list",'name' => 'help_list', 'id' => "help_list")) ?>
                 <script type='text/javascript'>
                         function setprojectid(projectid){
@@ -46,7 +45,6 @@
         ?></div> 
                <div class="clear"></div>
          </span>
-		 </div>
         </div> 
         <div class="clear"></div>
 </div>
@@ -140,7 +138,8 @@
       <span class="botRht_curv"></span>
                     <div class="gryBot">
                     
-                 <?php if($hlpdata1) { echo $this->renderElement('newpagination'); } ?>
+                 <?php //if($hlpdata1) { 
+				 echo $this->renderElement('newpagination'); //} ?>
         </div>
 
                     
