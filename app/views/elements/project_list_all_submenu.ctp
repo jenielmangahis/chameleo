@@ -1,0 +1,158 @@
+ <ul class="topTabs2" id="tab-container-1-nav" style=" margin-top: 0px;padding-left: -40px;">
+            <li>
+			<?php
+			if($_GET['url']==='admins/billing_status_list' || $_GET['url']==='admins/projectlist/1' || $_GET['url']==='admins/projectlist_by_product/1' || $_GET['url']==='admins/ownerlist' || $_GET['url']==='admins/projectlist_by_customer/1'){
+			e(
+				$html->link(
+					$html->tag('span','Details'),
+					array('controller'=>'admins','action'=>'projectlist','1'),
+					array('class'=>'tabSelt','escape'=>false)
+				)	
+			);
+			}
+			else{
+			e(
+				$html->link(
+					$html->tag('span','Details'),
+					array('controller'=>'admins','action'=>'projectlist','1'),
+					array('class'=>'','escape'=>false)
+				)	
+			);
+			}
+			?>
+			</li>
+            <li>
+			<?php
+			if($_GET['url']==='admins/projectsponsor'){
+			e(
+				$html->link(
+					$html->tag('span','Owner'),
+					array('controller'=>'admins','action'=>'projectsponsor'),
+					array('class'=>'tabSelt','escape'=>false)
+				)	
+			);
+			}
+			else{
+			e(
+				$html->link(
+					$html->tag('span','Owner'),
+					array('controller'=>'admins','action'=>'projectsponsor'),
+					array('class'=>'','escape'=>false)
+				)	
+			);
+			}
+			?>
+			</li>
+			<li>
+			<?php
+			if($_GET['url']==='admins/user_agreement_project'){
+				e($html->link(
+							$html->tag('span', 'Agreement'),
+							array('controller'=>'admins','action'=>'user_agreement_project'),
+						array('escape'=>false,'class'=>'tabSelt')
+							)
+				);
+				}
+				else{
+				e($html->link(
+							$html->tag('span', 'Agreement'),
+							array('controller'=>'admins','action'=>'user_agreement_project'),
+						array('escape'=>false,'class'=>'')
+							)
+				);
+				}
+			?>
+			</li>
+			<li>
+		<?php
+		if($_GET['url']==='admins/system_pricing_list/3'){
+		e(
+			$html->link(
+				$html->tag('span','System Pricing'),
+				array('controller'=>'admins','action'=>'system_pricing_list','3'),
+				array('escape'=>false,'class'=>'tabSelt')
+			)
+		);
+		}
+		else{
+		e(
+			$html->link(
+				$html->tag('span','System Pricing'),
+				array('controller'=>'admins','action'=>'system_pricing_list','3'),
+				array('escape'=>false,'class'=>'')
+			)
+		);
+		}
+		?>
+		</li>
+		<li>
+		<?php
+		if($_GET['url']==='admins/pricingtype/3'){
+		e(
+			$html->link(
+			$html->tag('span','Coin Pricing'),
+			array('controller'=>'admins','action'=>'pricingtype','3'),
+			array('escape'=>false,'class'=>'tabSelt')
+			)
+		);	
+		}
+		else{
+		e(
+			$html->link(
+			$html->tag('span','Coin Pricing'),
+			array('controller'=>'admins','action'=>'pricingtype','3'),
+			array('escape'=>false,'class'=>'')
+			)
+		);	
+		}
+		?>
+		</li>
+<li>
+		<?php
+		if($_GET['url']==='admins/projectcontrols'){
+		e(
+			$html->link(
+			$html->tag('span','Controls'),
+			array('controller'=>'admins','action'=>'projectcontrols'),
+			array('escape'=>false,'class'=>'tabSelt')
+			)
+		);	
+		}
+		else{
+		e(
+			$html->link(
+			$html->tag('span','Controls'),
+			array('controller'=>'admins','action'=>'projectcontrols'),
+			array('escape'=>false,'class'=>'')
+			)
+		);	
+		}
+		?>
+</li>
+
+<li>
+		<?php
+		if($_GET['url']==='admins/projectbackup'){
+		e(
+			$html->link(
+			$html->tag('span','Backup'),
+			array('controller'=>'admins','action'=>'projectbackup'),
+			array('escape'=>false,'class'=>'tabSelt')
+			)
+		);	
+		}
+		else{
+		e(
+			$html->link(
+			$html->tag('span','Backup'),
+			array('controller'=>'admins','action'=>'projectbackup'),
+			array('escape'=>false,'class'=>'')
+			)
+		);	
+		}
+		
+		?>
+</li>
+				
+		 
+    </ul>
