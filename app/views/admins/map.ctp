@@ -143,8 +143,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 </div>
             </div>
         </div>
-        
-        
+
        <div class="topTabs" style="height:25px;">
             <!--<ul class="dropdown">
             <li>
@@ -169,84 +168,37 @@ google.maps.event.addDomListener(window, 'load', initialize);
             </li>
             <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
             </ul>-->
-		</div> 
-        
-
+		    </div>
 </div>
 
-<div class="clearfix nav-submenu-container">
-	<div class="midCont" style="min-height: 30px;">
-		<?php
-        	$this->loginarea="admins"; $this->subtabsel=map;
-        	echo $this->renderElement('memberlist_submenus');  
-        ?>  
-    </div>
-</div>
-
-
-<div class="midCont" id="newcmmtasktab">
-
-
-<?php if($session->check('Message.flash')){ ?> 
-<div id="blck"> 
-        <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
-	        <div class="msgBoxBg">
-		        <div class=""><a href="#." onclick="hideDiv();"><img src="/img/close.png" alt="" style="margin-left: 945px;  position: absolute;   z-index: 11;" /></a>
-			        <?php  $session->flash();    ?> 
-		        </div>
-	                <div class="msgBoxBotLft"><div class="msgBoxBotRht"><div class="msgBoxBotBg"></div></div></div>
-		</div>
-</div>
-                                            <?php } ?>
-
-                            <!-- top curv image starts -->
-                         
-
-  <div class="table-responsive">
-          <table class="table table-borderless">
-          <tr>
-          	<td>
-            	<h2><label class="boldlabel">Relationship Type</label></h2>
-                
-				  <?php
-                      $groupdata = array(
-                                              '1' => 'Company',
-                                              '2' => 'Contact',
-                                              '3' => 'Customer',
-                                              '4' => 'Branches',
-                                              '5' => 'Los',
-                                              '6' => 'Employees',
-                                              '7' => 'Correspondents',
-                                              '8' => 'Brokers',
-                                              '9' => 'Others'
-                                        );
-                  ?>
-                  <span class="txtArea-top"> 
-                      <span class="txtArea-bot"> 
-                          <?php
-                            echo $form->input("Relationship.group",array('type' => 'select','options' => $groupdata,
-                            'multiple' => 'checkbox','class'=>'multi-list form-control','label' => false,'selected' => $chkSelected)); 
-                          ?>
-                      </span>
-                  </span>
-              </td>                       
-          </tr>
-          </table>
-  </div>               
-  <br />           
-  <div class="container-fluid">
-
-        
-        <div id="googleMap" style="width:auto;height:500px;"></div>  
-
+  <div class="clearfix nav-submenu-container">
+  	<div class="midCont" style="min-height: 30px;">
+  		<?php
+          	$this->loginarea="admins"; $this->subtabsel=map;
+          	echo $this->renderElement('memberlist_submenus');  
+          ?>  
+      </div>
   </div>
 
-
-
-<div class="clear"></div>
+  <div class="midCont" id="newcmmtasktab">
+  <?php if($session->check('Message.flash')){ ?> 
+    <div id="blck"> 
+            <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
+    	        <div class="msgBoxBg">
+    		        <div class=""><a href="#." onclick="hideDiv();"><img src="/img/close.png" alt="" style="margin-left: 945px;  position: absolute;   z-index: 11;" /></a>
+    			        <?php  $session->flash();    ?> 
+    		        </div>
+    	                <div class="msgBoxBotLft"><div class="msgBoxBotRht"><div class="msgBoxBotBg"></div></div></div>
+    		</div>
     </div>
+  <?php } ?>
+    <div class="container-fluid">
+          <div id="googleMap" style="width:auto;height:500px;"></div>  
+    </div>
+    <div class="clear"></div>
+  </div>
     
-         <div class="clear"></div>
+<div class="clear"></div>
 </div>      
 <script type="text/javascript">
 $(document).ready(function() {

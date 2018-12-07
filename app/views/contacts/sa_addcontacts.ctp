@@ -210,6 +210,22 @@ $('#coNtact').addClass("butBgSelt");
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
+                  <td width="20%" align="right"><label class="boldlabel">Latitude <span class="red">*</span></label></td>
+                  <td width="30%"><label for="project_name"></label>
+                    <span class="intpSpan"><?php echo $form->input("Contact.lat", array('id' => 'lat', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "255"));?></span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="30%" align="right"><label class="boldlabel">Longtitude <span class="red">*</span></label></td>
+                  <td width="10%"><label for="project_name"></label>
+                    <span class="intpSpan"><?php echo $form->input("Contact.long", array('id' => 'long', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "255"));?></span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
                   <td colspan="5"><b>Any item with a</b> "<span class="red">*</span>" <b>requires an entry.</b></td>
                 </tr>
               </tbody>

@@ -25905,7 +25905,7 @@ from master_points order by master_points.display_order asc");
                         $newCmpData[] = array($row['Contact']['lat'],$row['Contact']['long'],$name); 
                     }
                 }
-            }    
+            }   
             $this->set('cmpData',$newCmpData);
             $this->set('chkSelected',$type);
         }
