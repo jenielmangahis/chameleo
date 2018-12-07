@@ -31,7 +31,6 @@
     * its action called 'display', and we pass a param to select the view file
     * to use (in this case, /app/views/pages/home.ctp)...
     */
-
     
     Router::connect('/', array('controller' => 'companies', 'action' =>  'index'));
     $current_domain= $_SERVER['HTTP_HOST'];
@@ -48,8 +47,8 @@
 		//pr($url_array);
         $temp1 =$url_array[1];
 
-        mysql_connect('localhost','chameleo_ds','dotsquares');
-        mysql_select_db('chameleo_sa');
+        mysql_connect('localhost','root','');
+        mysql_select_db('chameleo_sa_v2');
         $rs = mysql_query("select project_name from projects where system_name='".$temp1."'");
         $count = mysql_num_rows($rs);
         //echo "test";

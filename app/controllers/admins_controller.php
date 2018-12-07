@@ -25856,8 +25856,61 @@ from master_points order by master_points.display_order asc");
             $this->formstatustypedropdown($project_id);          
            $this->countrydroupdown();
         } //end of inquirydetailopeninquiry
+
+        function map($type = 2){
+            $this->session_check_admin(); 
+            $projectid = '1';
+            $newCmpData = array();
+            //company or branch lat long code        
+            if($type == 1 || $type == 4){    
+                App::import("Model", "Company");
+                $this->Company =   & new Company();    
+                $conditions = array(
+                    'Company.delete_status' => '0',
+                    'Company.project_id' => '0',
+                    'Company.lat <>' => '',
+                    'Company.long <>' => ''
+                );
+                $cmpData = $this->Company->find('all',array("conditions"=>array('Company.delete_status' => '0','Company.project_id' => '0','Company.lat <>' => '','Company.long <>' => '')));
+                //ignore null values lang latitude    
+                foreach ($cmpData as $row) {
+                    if($row['Company']['lat']!='' && $row['Company']['long']!='' ) 
+                    {    
+                        $newCmpData[] = array($row['Company']['lat'],$row['Company']['long'],$row['Company']['company_name']); 
+                    }
+                }
+            }else if($type == 2||$type == 3||$type == 5||$type == 6||$type == 7||$type == 8||$type == 9){
+                App::import("Model", "Contact");
+                $this->Contact =   & new Contact();  
+
+                if($type==5){    //Los lat long code
+                    $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 262)));                                        
+                }else if($type==6){     //Employees lat long code
+                    $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 263)));                                        
+                }else if($type==7){     //Correspondents lat long code
+                    $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 48)));                                     
+                }else if($type==8){     //Brokers lat long code
+                    $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 264)));                                        
+                }else if($type==9){   //Others lat long code  
+                    $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 265)));                                        
+                }else{    //default lat long code
+                    $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0)));
+                }
+                //echo "<pre>";print_r( $cmpData);die();
+                //ignore null values lang latitude    
+                foreach ($cmpData as $row) {
+                    if($row['Contact']['lat']!='' && $row['Contact']['long']!='' ) 
+                    {    
+                        $name = $row['Contact']['firstname'].' '.$row['Contact']['lastname'];
+                        $newCmpData[] = array($row['Contact']['lat'],$row['Contact']['long'],$name); 
+                    }
+                }
+            }    
+            $this->set('cmpData',$newCmpData);
+            $this->set('chkSelected',$type);
+        }
 		
-		function map(){
+		function map_old_12072018(){
 					
 			$this->session_check_admin();
 			$project_id = $this->Session->read("sessionprojectid");

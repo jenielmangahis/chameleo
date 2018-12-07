@@ -253,7 +253,7 @@ Configure::write('Cart.DIR_PREFIX', 'ocart_');
 @Date			April 10, 2012
 */
 //$baseUrl = 'http://'.$_SERVER['HTTP_HOST'].'/';
-$baseUrl = "http://localhost/wolf/chameleo/";
+$baseUrl = "http://localhost/wolf/git/chameleon_v2/";
 //echo "suman  ".Configure::read('App.ProjectBaseUrl').' singh';
 /*
 if(Configure::read('App.ProjectBaseUrl') != '')

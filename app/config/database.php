@@ -84,7 +84,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'chameleo_sa',
+		'database' => 'chameleo_sa_v2',
 		'prefix' => '',
 	);
 
@@ -94,7 +94,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'chameleo_sa',
+		'database' => 'chameleo_sa_v2',
 		'prefix' => '',
 	);
 }
