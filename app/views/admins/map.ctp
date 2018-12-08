@@ -192,6 +192,31 @@ google.maps.event.addDomListener(window, 'load', initialize);
     		</div>
     </div>
   <?php } ?>
+  <div class="table-responsive">
+          <table class="table table-borderless">
+          <tr>
+            <td>
+              <h2><label class="boldlabel">Relationship Type</label></h2>
+                
+          <?php
+                      $groupdata = array(
+                                              '2' => 'Contact',
+                                              '8' => 'Holders'
+                                        );
+                  ?>
+                  <span class="txtArea-top"> 
+                      <span class="txtArea-bot"> 
+                          <?php
+                            echo $form->input("Relationship.group",array('type' => 'select','options' => $groupdata,
+                            'multiple' => 'checkbox','class'=>'multi-list form-control','label' => false,'selected' => $chkSelected)); 
+                          ?>
+                      </span>
+                  </span>
+              </td>                       
+          </tr>
+          </table>
+  </div>      
+
     <div class="container-fluid">
           <div id="googleMap" style="width:auto;height:500px;"></div>  
     </div>

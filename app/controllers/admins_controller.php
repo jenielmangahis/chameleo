@@ -25881,7 +25881,8 @@ from master_points order by master_points.display_order asc");
                 }
             }else if($type == 2||$type == 3||$type == 5||$type == 6||$type == 7||$type == 8||$type == 9){
                 App::import("Model", "Contact");
-                $this->Contact =   & new Contact();  
+                $this->Contact =   & new Contact();
+                $this->Holder  = & new Holder();  
 
                 if($type==5){    //Los lat long code
                     $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 262)));                                        
@@ -25893,6 +25894,8 @@ from master_points order by master_points.display_order asc");
                     $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 264)));                                        
                 }else if($type==9){   //Others lat long code  
                     $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0,'Contact.contact_type_id' => 265)));                                        
+                }else if($type==10){
+                    $cmpData = $this->Holder->find('all',array('conditions' => array('Holder.active_status' => 1,'Holder.delete_status' => 0)));                                        
                 }else{    //default lat long code
                     $cmpData = $this->Contact->find('all',array('conditions' => array('Contact.active_status' => 1,'Contact.delete_status' => 0)));
                 }
@@ -25903,6 +25906,11 @@ from master_points order by master_points.display_order asc");
                     {    
                         $name = $row['Contact']['firstname'].' '.$row['Contact']['lastname'];
                         $newCmpData[] = array($row['Contact']['lat'],$row['Contact']['long'],$name); 
+                    }
+
+                    if( $row['Holder']['latitude'] != '' && $row['Holder']['lognitude'] != '' ){
+                        $name = $row['Holder']['firstname'] . ' ' . $row['Holder']['lastnameshow'];
+                        $newCmpData[] = array($row['Holder']['latitude'],$row['Holder']['lognitude'],$name); 
                     }
                 }
             }   
