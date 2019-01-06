@@ -339,6 +339,14 @@
 
             $border_footer_list = $this->BorderFooter->find('all',array("conditions"=>$condition, 'order' =>$order, 'limit' => $limit, 'page' => $page));
             ##set project type data in variable
+
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '86'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition                        
          
             $this->set("border_footer_list",$border_footer_list);  	
             

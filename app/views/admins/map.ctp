@@ -1,75 +1,9 @@
-<?php /*?><script type="text/javascript">
-	$(document).ready(function() {
-		$('#memBrs').removeClass("butBg");
-		$('#memBrs').addClass("butBgSelt");
-}); 
-</script> 
-<?php
-//echo '<pre>';print_r($markerStringArr);
-$markerString = implode(',',$markerStringArr);
-//echo $markerString;
-//$markerString = '{ latitude: 47.58969,longitude: 9.473413,icon: { image: baseUrl+"images/gmap_pin_orange.png",iconanchor: [12,46] } }';
 
-?>
-
-<?php 	
-echo $javascript->link('maps');
-echo $javascript->link('mapiconmaker');
-echo $javascript->link('jquery_003');
-echo $javascript->link('jquery_002');		
-?>
-<script type="text/javascript">
-	$(function()
-	{
-		var map = new GMap2(document.getElementById("map4"));
-          	map.setUIToDefault();
-        <?php 
-	        if(!empty( $markerStringArr)){	
-			foreach($markerStringArr as $llc){ ?>
-			  map.setCenter(new GLatLng(<?php echo $llc['lat']; ?>, <?php echo $llc['long']; ?>), 5);
-			  var marker = new GMarker(map.getCenter(), {icon: MapIconMaker.createMarkerIcon({width: 64, height: 64, primaryColor: "<?php echo $llc['color']; ?>"})});
-			  //marker.openInfoWindowHtml('<p>hello</p>');
-			  map.addOverlay(marker);		
-		<?php }} else{ ?>
-		 		map.setCenter(new GLatLng('40.4230', '98.7372'), 5);
-				map.addOverlay(new GMarker(map.getCenter(), none));
-		<?php } ?>		
-	});
-	</script>
-	
-<div class="container">
-         <div class="titlCont">
-		 	
-		  		<div class="centerPage" >
-			
-		            <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
- <?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-
-					<span class="titlTxt1" style="padding-top:17px !important">&nbsp;</span>
-					<span class="titlTxt">Member Mapping  </span>
-					<span class="titlTxt1" style="padding-top:17px !important">&nbsp;</span>
-					<div class="topTabs"></div>
-			     <?php
-			 		
-					$this->loginarea="admins"; $this->subtabsel=map;
-                  echo $this->renderElement('memberlist_submenus');  
-			?>
-		 		</div>
-			</div>
-		</div>
-		<div class="midCont" id="cmplisttab">
-		<div id="map4" style="height:800px;">coming soon</div>
-		
-		
-</div>			<?php */?>
-
-
-<?php $pagination->setPaging($paging); ?> 
  <!-- Body Panel starts -->
  <script
 src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBZsWgd_AYsjIHhio6SJTb7FY6947sUfPM&sensor=false">
 </script>
+<?php $pagination->setPaging($paging); ?> 
 <?php
 $latlongString = "[";
 if(count($cmpData))
@@ -105,9 +39,12 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
   for(var i=0;i<latlongArray.length;i++)
   { 
+    var image = 'http://chameleon123.com/sa/images/map_iconDental.png'; //'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
     var latlong=new google.maps.LatLng(latlongArray[i][0],latlongArray[i][1]);
     var marker=new google.maps.Marker({
       position:latlong,
+      map: map,
+      icon: image
     });
 
     marker.setMap(map);

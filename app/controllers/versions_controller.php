@@ -64,6 +64,14 @@
             $sys_ver_data = $this->SystemVersion->find('all',array("conditions"=>$condition, 'order' =>$order, 'limit' => $limit, 'page' => $page));
             ##set project type data in variable
          
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '77'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition 
+
             $this->set("sys_ver_data",$sys_ver_data);  
         } //End system_version_list function.  
 
@@ -122,6 +130,15 @@
                 $this->data = $this->SystemVersion->read();
 				$this->set("data", $this->data);
             }       
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '74'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition
+
         }//end system_version function
 
 		/*
