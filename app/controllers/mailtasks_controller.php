@@ -756,6 +756,7 @@ class MailtasksController extends AppController
 		if(empty($projectid)){
 			$projectid='0';
 		}
+		echo 4;exit;
 		$projectDetails=$this->getprojectdetails($projectid);
 			
 		if($recid!=''){
