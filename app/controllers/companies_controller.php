@@ -38121,7 +38121,7 @@ function selectstateoptions($countryid='',$modelname=''){
 
             $numunites_count = $this->getcoinsetsunitbyprojectid($project_id);
             $this->set('numunites_count',$numunites_count);           
-            if(empty($project_name)) $this->redirect(array('controller'=>'companies','action'=>'ession_expired'));
+            //if(empty($project_name)) $this->redirect(array('controller'=>'companies','action'=>'session_expired'));
 
             $this->set('project_name',$project_name);    
 
@@ -39288,8 +39288,9 @@ function selectstateoptions($countryid='',$modelname=''){
 			$consumer_secret = 'sgNN0GyJXDv1jgF6db8a99LZkQeCkvkzy9zKTArE';
 			$token = '748855514-uGXiLRPdk82Ag6LT3ROdCZxnkBEfZsuZgjMlYWR0';
 			$secret = '1f3CWIxvDVQyWuMrNO7UEuQDW9tGoV1LQCyVYUGIo4';		
-			$twitterObjUnAuth = new EpiTwitter($consumer_key, $consumer_secret);
-			$url = $twitterObjUnAuth->getAuthenticateUrl();				
+			//$twitterObjUnAuth = new EpiTwitter($consumer_key, $consumer_secret);
+			//$url = $twitterObjUnAuth->getAuthenticateUrl();		
+            $url = '';		
             $this->set("twitter_url",$url); 
 		          
         }
