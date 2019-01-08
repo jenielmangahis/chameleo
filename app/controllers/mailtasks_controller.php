@@ -180,6 +180,14 @@ class MailtasksController extends AppController
 		$emailtempdtlarr = $this->EmailTemplate->find('all',array("conditions"=>$condition, 'order' =>$order, 'limit' => $limit, 'page' => $page));
 		##set EmailTemplate data in variable
 
+		# set help condition
+		 App::import("Model", "HelpContent");
+		 $this->HelpContent =  & new HelpContent();
+		 $condition = "HelpContent.id = '81'";  
+		 $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+		 $this->set("hlpdata",$hlpdata);
+		 # set help condition
+
 		$this->set("emailtemplates",$emailtempdtlarr);
 	}
 

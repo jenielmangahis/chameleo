@@ -184,6 +184,16 @@
             ##set project type data in variable
          
             $this->set("sys_pri_data",$sys_pri_data);  
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '70'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition   
+
+
         }   
 		
 		/*
@@ -223,6 +233,15 @@
             ##set project type data in variable
          
             $this->set("billingtype_list",$billingtype_list);  	
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '88'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition   
+
         }
 		
 		function addbillingtype($id=null) {
@@ -455,6 +474,16 @@
             $this->UserAgreement->id = $user_agreement_id;
             $this->data = $this->UserAgreement->read();
             $this->set("data", $this->data);
+
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '69'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition   
+
+
         }
         
         
@@ -726,7 +755,16 @@
             $coinset_orders[$i][Coinset][project_name]=$this->getprojectnamebyid($coinset_orders[$i][Coinset][project_id]);
             } */ 
 
-            $this->set("coinset_orders",$coinset_orders);    
+            $this->set("coinset_orders",$coinset_orders);   
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '68'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition
+
         }
 		
 		 function projectlist_by_customer() {
@@ -840,6 +878,14 @@
             } */ 
 
             $this->set("coinset_orders",$coinset_orders);    
+
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '73'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition  
         }
         
         function projectlist_by_sys_price() {
@@ -1760,6 +1806,15 @@
             }
 
             $this->set("pricingtypedata",$pricingtypedata);    
+
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '71'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition   
+
         }   
 
 
@@ -4209,6 +4264,14 @@
 
             $this->set("contacttypedata",$contacttypedata);
 
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '87'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition  
+
         }    
 
         /*
@@ -4357,6 +4420,14 @@
             ##set project type data in variable
 
             $this->set("shippingtypedata",$shippingtypedata);
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '89'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition   
 
         }    
 
@@ -5739,6 +5810,15 @@
             ##set project type data in variable
          
             $this->set("status_type_list",$status_type_list);  
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '76'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition
+
 		}
 		
 		function status_type($id = null) {
@@ -11104,6 +11184,15 @@ if(!$errormsg){
             } */ 
 
             $this->set("coinset_orders",$coinset_orders);    
+
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '78'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition
+
         }
 
         function coinset_orders_approved()
@@ -11140,7 +11229,16 @@ if(!$errormsg){
                 $coinset_orders[$i]['Coinset']['project_name']=$this->getprojectnamebyid($coinset_orders[$i]['Coinset']['project_id']);
             }
 
-            $this->set("coinset_orders",$coinset_orders);    
+            $this->set("coinset_orders",$coinset_orders);   
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '79'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition 
+
         }
 
 
@@ -11179,6 +11277,15 @@ if(!$errormsg){
             }
 
             $this->set("coinset_orders",$coinset_orders);    
+
+            # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '80'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition 
+
         }
     
         /*
@@ -14074,6 +14181,14 @@ if(!$errormsg){
             $project_name=$this->Session->read("projectwebsite_name_admin");  
             $this->set('current_project_name',$project_name);
             //get project related points information
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '72'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition  
              
             $points_info=$this->Point->query("select * , (select point from points where master_points.point_id=points.point_id and project_id='$projectid')as point , 
 (select level_value from points where master_points.point_id=points.point_id and project_id='$projectid')as level_value,
@@ -24967,6 +25082,14 @@ from master_points order by master_points.display_order asc");
 		*/
 		
 		function overrideslist(){
+
+             # set help condition
+             App::import("Model", "HelpContent");
+             $this->HelpContent =  & new HelpContent();
+             $condition = "HelpContent.id = '90'";  
+             $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+             $this->set("hlpdata",$hlpdata);
+             # set help condition  
 		
 		}// end overrideslist()
 		
