@@ -29104,7 +29104,7 @@
 
 
 
-            if(empty($project_name)) $this->redirect('/companies/session_expired');
+            //if(empty($project_name)) $this->redirect('/companies/session_expired');
 
 
 
