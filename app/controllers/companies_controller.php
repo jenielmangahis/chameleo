@@ -52819,13 +52819,9 @@ function selectstateoptions($countryid='',$modelname=''){
 
             $current_domain= $_SERVER['HTTP_HOST'];  
 
-
-
             if(isset($this->data)){
 
                 //...This if for login purpose
-
-
 
                 $username = $this->data['User']['username'];
 
@@ -52851,18 +52847,14 @@ function selectstateoptions($countryid='',$modelname=''){
 
                     $userpresent = $this->User->find('first', array('conditions' => $condition, 'recursive' => 0));
 
-                    if(is_array($userpresent) && !empty($userpresent)) {                
-
+                    if(is_array($userpresent) && !empty($userpresent)) { 
                         $username = $this->data['User']['username'];
 
                         $password = $this->data['User']['password'];
-
                         $condition = " User.username = '".$username."' AND User.password = '".md5($password)."' and User.project_id='".$project_id."' and User.delete_status='0' ";
 
-                        $userDetails = $this->User->find('first', array('conditions' => $condition, 'recursive' => 0));    
-
-
-
+                        $userDetails = $this->User->find('first', array('conditions' => $condition, 'recursive' => 0));  
+                        
                         if(is_array($userDetails) && !empty($userDetails)) {                        
 
                             

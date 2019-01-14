@@ -10,7 +10,7 @@
 			<h2 style="margin-left:-30px;"><?php  echo $project['Project']['system_name']; ?>- Login</h2>
 			<div style="margin: 0pt auto; width: auto;height:auto !important;height:200px;min-height:200px;">
 				<div><span align='center'><?php if($session->check('Message.flash')){ $session->flash(); } ?> </span></div>
-				<?php echo  $form->create('User',array('action'=>'/companies/iframelogin'/$frid/$prname,'id'=>'SignupForm','url'=>$this->here ,'onsubmit' => 'return validatelogin("add");'));?>
+				<?php echo  $form->create('User',array('id'=>'SignupForm','url'=>'/companies/iframelogin/' . $frid . '/' . $prname,'onsubmit' => 'return validatelogin("add");'));?>
 				
 				<p>&nbsp;</p> 
                 
